@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-
+import django_heroku
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'pages',
     'projects',
     'blog',
-    #'releases',
     'spotier',
 ]
 
@@ -161,3 +160,5 @@ SOCIAL_AUTH_SPOTIFY_SECRET = '05cd4467c06c4ca8b2701a4e6095e13e'
 SOCIAL_AUTH_SPOTIFY_SCOPE = ['user-read-email', 'user-library-read']
 LOGIN_REDIRECT_URL = '/spotier'
 LOGOUT_REDIRECT_URL = '/'
+
+django_heroku.settings(locals())
